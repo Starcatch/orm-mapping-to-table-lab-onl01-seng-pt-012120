@@ -23,6 +23,10 @@ class Student
   
   def save 
     sql = <<-SQL
+    insert into students (name,grade) values(?,?);
+  SQL
+  DB[:conn].execute(sql, self.name, self.grade)
+  
   end 
   
 end
